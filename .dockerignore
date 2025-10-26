@@ -1,0 +1,11 @@
+# Ignorar el archivo .env
+.env
+
+# Ignorar archivos innecesarios para la imagen
+.git
+.gitignore
+node_modules
+*.log
+
+# Archivos locales o de prueba
+src/main/resources/application.properties

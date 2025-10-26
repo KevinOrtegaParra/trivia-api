@@ -1,0 +1,18 @@
+services:
+  trivia_api:
+      build:
+        context: .
+      ports:
+        - "8080:8080"
+      env_file:
+        - .env
+      environment:
+        DATABASE_URL: ${DATABASE_URL}
+        JWT_SECRET_KEY: ${JWT_SECRET_KEY}
+        FRON_URL: ${FRON_URL}
+      networks:
+        - api_trivia
+      restart: always
+
+networks:
+  api_trivia:
