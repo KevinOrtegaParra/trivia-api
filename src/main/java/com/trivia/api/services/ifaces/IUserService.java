@@ -21,6 +21,8 @@ public interface IUserService {
 
     UserRespondeDTO getUser(String id) throws RestException;
 
+     UserRespondeDTO User(Authentication authentication) throws RestException;
+
     void delateId(String id) throws RestException;
 
     UserRespondeDTO livelife(Authentication authentication)throws RestException;

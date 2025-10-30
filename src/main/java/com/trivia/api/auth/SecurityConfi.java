@@ -52,7 +52,7 @@ public class SecurityConfi {
                                 .cors(cors -> {
                                 })
                                 .authorizeHttpRequests(authRequest -> authRequest
-                                                .requestMatchers("/auth/**", "/i18n/**", "/content/**",
+                                                .requestMatchers("/auth/**", "/i18n/**", "/content/**","/grades",
                                                                 "/users/register", "/h2-console/**", "/swagger-ui/**",
                                                                 "/swagger-ui/index.html", "/swagger-ui.html",
                                                                 "/v3/api-docs",

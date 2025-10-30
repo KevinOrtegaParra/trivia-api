@@ -33,8 +33,6 @@ public class GradeController {
     @Autowired
     IGradeService gradeService;
 
-    @PreAuthorize("hasRole('USER')")
-    @SecurityRequirement(name = "Authorization")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "401", description = "Unauthorized"),
             @ApiResponse(responseCode = "500", description = "Internal Error Server")

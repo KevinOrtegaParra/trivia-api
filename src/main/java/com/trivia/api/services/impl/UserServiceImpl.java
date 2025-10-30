@@ -281,4 +281,15 @@ public class UserServiceImpl implements IUserService {
         }
     }
 
+    @Override
+    public UserRespondeDTO User(Authentication authentication) throws RestException {
+         return userMapper.toUserRespondeDTO(iUserRepository.findByEmail(authentication.getName()).orElseThrow(() -> new NotFoundException(
+                ErrorDto.builder()
+                        .error(Messages.NOT_FOUND)
+                        .message(Messages.USER_NOT_EXIST)
+                        .status(HttpStatus.NOT_FOUND.value())
+                        .date(LocalDateTime.now())
+                        .build())));
+    }
+
 }

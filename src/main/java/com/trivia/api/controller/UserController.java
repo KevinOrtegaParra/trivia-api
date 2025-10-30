@@ -63,8 +63,24 @@ public class UserController {
     @Operation(summary = "Show a user by their id", description = "Endpoint to Show a user by their id")
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{id}")
-    public ResponseEntity<UserRespondeDTO> getUser(@PathVariable String id) throws RestException {
+    public ResponseEntity<UserRespondeDTO> getUserById(@PathVariable String id) throws RestException {
         return ResponseEntity.ok(userService.getUser(id));
+    }
+
+    @PreAuthorize("hasRole('USER')")
+    @SecurityRequirement(name = "Authorization")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "400", description = "Bad Request"),
+            @ApiResponse(responseCode = "401", description = "Unauthorized"),
+            @ApiResponse(responseCode = "403", description = "Forbidden"),
+            @ApiResponse(responseCode = "404", description = "Not Found"),
+            @ApiResponse(responseCode = "500", description = "Internal Error Server")
+    })
+    @Operation(summary = "Show a user ", description = "Endpoint to Show a user")
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/me")
+    public ResponseEntity<UserRespondeDTO> getUser(Authentication authentication) throws RestException {
+        return ResponseEntity.ok(userService.User(authentication));
     }
 
     @ApiResponses(value = {
