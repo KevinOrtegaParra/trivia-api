@@ -11,7 +11,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Etapa 2: Ejecutar la app ya compilada
-FROM openjdk:17
+FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copiar el JAR generado en la etapa anterior
