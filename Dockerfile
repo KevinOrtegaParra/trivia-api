@@ -11,12 +11,12 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Etapa 2: Ejecutar la app ya compilada
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jdk
 WORKDIR /app
 
 # Copiar el JAR generado en la etapa anterior
 COPY --from=build /app/target/trivia-api-0.0.1-SNAPSHOT.jar /app/app.jar
 
-EXPOSE 8084
+EXPOSE 8080
 
 CMD ["java","-Dspring.profiles.active=docker","-jar","app.jar"]
