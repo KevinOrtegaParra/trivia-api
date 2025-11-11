@@ -21,7 +21,7 @@ Cuenta con autenticación mediante **JWT**, control de roles, y persistencia en 
 ---
 
 ## 🗂️ Estructura del proyecto |
-
+```
 trivia-api/
 ├── src/
 │   ├── main/java/com/trivia/api/
@@ -35,7 +35,7 @@ trivia-api/
 │       ├── application.properties
 │       └── static/
 └── pom.xml
-
+```
 ---
 
 ## ⚙️ Configuración local
