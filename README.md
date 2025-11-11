@@ -129,8 +129,9 @@ http://localhost:8080/api/v1/swagger-ui/index.html#
 
 
 Postman (ejemplo):
-```
+
 POST http://localhost:8080/api/v1/auth/login
+```
 {
   "email": "user@mail.com",
   "password": "123456"
