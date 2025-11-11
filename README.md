@@ -108,12 +108,12 @@ Authorization: Bearer <token>
 ## 🧰 Roles
 
 El sistema usa un enum Role para controlar permisos:
-
+```
 public enum Role {
     USER,
     ADMIN
 }
-
+```
 
 Cada nuevo usuario (normal o Google) se registra con el rol USER.
 
@@ -129,19 +129,19 @@ http://localhost:8080/api/v1/swagger-ui/index.html#
 
 
 Postman (ejemplo):
-
+```
 POST http://localhost:8080/api/v1/auth/login
 {
   "email": "user@mail.com",
   "password": "123456"
 }
-
+```
 ---
 
 ## 🐳 Despliegue con Docker y Render
 
 El proyecto usa un Dockerfile multietapa:
-
+```
 # Etapa 1: construir el JAR
 FROM maven:3.9.9-eclipse-temurin-17 AS build
 WORKDIR /app
@@ -153,7 +153,7 @@ FROM eclipse-temurin:17-jdk
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 ENTRYPOINT ["java","-jar","app.jar"]
-
+```
 
 Render compila y ejecuta automáticamente al hacer push en la rama main.
 
