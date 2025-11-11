@@ -1,11 +1,11 @@
-#🧠 Trivia API — Backend
+# 🧠 Trivia API — Backend
 
 **Trivia API** es una aplicación backend desarrollada en **Spring Boot 3** y **Java 17** que permite a los usuarios registrarse, iniciar sesión (con credenciales o con **Google OAuth2**) y participar en trivias.
 Cuenta con autenticación mediante **JWT**, control de roles, y persistencia en **MongoDB Atlas**.
 
 ---
 
-##🚀 Tecnologías principales
+## 🚀 Tecnologías principales
 
 | Componente |	Tecnología |
 |-------------|-------------|
@@ -20,7 +20,7 @@ Cuenta con autenticación mediante **JWT**, control de roles, y persistencia en 
 
 ---
 
-##🗂️ Estructura del proyecto |
+## 🗂️ Estructura del proyecto |
 
 trivia-api/
 ├── src/
@@ -38,16 +38,16 @@ trivia-api/
 
 ---
 
-##⚙️ Configuración local
+## ⚙️ Configuración local
 
-###1️⃣ Requisitos previos
+### 1️⃣ Requisitos previos
 - Java 17  
 - Maven 3.9+  
 - Cuenta en **MongoDB Atlas**  
 - Proyecto configurado en **Google Cloud Console** para OAuth2  
 - Postman o Insomnia para probar los endpoints  
 
-###2️⃣ Configura tu base de datos MongoDB Atlas
+### 2️⃣ Configura tu base de datos MongoDB Atlas
 
 En tu archivo application.properties agrega:
 ```
@@ -60,7 +60,7 @@ spring.data.mongodb.uri=mongodb+srv://<usuario>:<password>@cluster.mongodb.net/t
 
 ---
 
-##🔑 Variables de entorno
+## 🔑 Variables de entorno
 
 Cuando despliegues en Render, asegúrate de configurar las siguientes variables:
 
@@ -74,7 +74,7 @@ Cuando despliegues en Render, asegúrate de configurar las siguientes variables:
 
 ---
 
-##🔐 Autenticación
+## 🔐 Autenticación
 
 El sistema soporta:
 
@@ -88,7 +88,7 @@ Authorization: Bearer <token>
 
 ---
 
-##📡 Endpoints principales
+## 📡 Endpoints principales
 
 🔸 Autenticación
 | Método	| Endpoint |	Descripción |
@@ -105,7 +105,7 @@ Authorization: Bearer <token>
 
 ---
 
-##🧰 Roles
+## 🧰 Roles
 
 El sistema usa un enum Role para controlar permisos:
 
@@ -119,7 +119,7 @@ Cada nuevo usuario (normal o Google) se registra con el rol USER.
 
 ---
 
-##🧪 Pruebas locales
+## 🧪 Pruebas locales
 
 Para probar los endpoints, puedes usar Swagger UI o Postman:
 
@@ -138,7 +138,7 @@ POST http://localhost:8080/api/v1/auth/login
 
 ---
 
-##🐳 Despliegue con Docker y Render
+## 🐳 Despliegue con Docker y Render
 
 El proyecto usa un Dockerfile multietapa:
 
@@ -159,14 +159,14 @@ Render compila y ejecuta automáticamente al hacer push en la rama main.
 
 ---
 
-##🧾 Licencia
+## 🧾 Licencia
 
 Este proyecto está bajo la licencia MIT.
 Puedes usarlo, modificarlo y compartirlo libremente dando crédito al autor.
 
 ---
 
-##👨‍💻 Autor
+## 👨‍💻 Autor
 
 Kevin Antonio Ortega Parra
 Desarrollador Backend Java
